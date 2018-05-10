@@ -1,4 +1,4 @@
-// This program determines whether a given credit card number is a valid Visa, American Express, or Mastercard. 
+// This program eventually determines whether a given credit card number is a valid Visa, American Express, or Mastercard. 
 
 #include <cs50.h>
 #include <stdio.h>
@@ -30,7 +30,8 @@ int main(void)
         return 0;
     }
 
-
+    // haven't learned about arrays yet, oopsies!
+    
     int secondtolast;
     int lastdigit;
     int three;
@@ -50,6 +51,8 @@ int main(void)
 
 
 
+    // store each digit of the credit card number as a variable. sorry about all the 0s!!!!
+    
     secondtolast = ((cc_number % 100) - (cc_number % 10))/10;
 
     lastdigit = (cc_number % 10);
