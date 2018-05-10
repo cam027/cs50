@@ -1,0 +1,355 @@
+// This program determines whether a given credit card number is a valid Visa, American Express, or Mastercard. 
+
+#include <cs50.h>
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    long long cc_number = 0;
+    do
+    {
+        printf("Number:\n");
+        cc_number = get_long_long();
+    }
+    while (cc_number < 0);
+
+    int count = 0;
+    long long digits = cc_number;
+
+
+    while (digits > 0)
+    {
+        digits = digits/10;
+        count ++;
+    }
+
+    if ((count != 13) && (count != 16) && (count != 15))
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
+
+    int secondtolast;
+    int lastdigit;
+    int three;
+    int four;
+    int five;
+    int six;
+    int seven;
+    int eight;
+    int nine;
+    int ten;
+    int eleven;
+    int twelve;
+    int thirteen;
+    int fourteen;
+    int fifteen;
+    int sixteen;
+
+
+
+    secondtolast = ((cc_number % 100) - (cc_number % 10))/10;
+
+    lastdigit = (cc_number % 10);
+
+    three = ((cc_number % 1000) - (cc_number % 100))/100;
+
+    four = ((cc_number % 10000) - (cc_number % 1000))/1000;
+
+    five = ((cc_number % 100000) - (cc_number % 10000))/10000;
+
+    six = ((cc_number % 1000000) - (cc_number % 100000))/100000;
+
+    seven = ((cc_number % 10000000) - (cc_number % 1000000))/1000000;
+
+    eight = ((cc_number % 100000000) - (cc_number % 10000000))/10000000;
+
+    nine = ((cc_number % 1000000000) - (cc_number % 100000000))/100000000;
+
+    ten = ((cc_number % 10000000000) - (cc_number % 1000000000))/1000000000;
+
+    eleven = ((cc_number % 100000000000) - (cc_number % 10000000000))/(10000000000);
+
+    twelve = ((cc_number % 1000000000000) - (cc_number % 100000000000))/(100000000000);
+
+    thirteen = ((cc_number % 10000000000000) - (cc_number % 1000000000000))/(1000000000000);
+
+    fourteen = ((cc_number % 100000000000000) - (cc_number % 1000000000000))/(10000000000000);
+
+    fifteen = ((cc_number % 1000000000000000) - (cc_number % 100000000000000))/(100000000000000);
+
+    sixteen = ((cc_number % 10000000000000000) - (cc_number % 1000000000000000))/(1000000000000000);
+
+
+    int lastdigitpro = (lastdigit*2);
+    int secondpro = (secondtolast*2);
+    int threepro = (three*2);
+    int fourpro = (four*2);
+    int fivepro = (five*2);
+    int sixpro = (six*2);
+    int sevenpro = (seven*2);
+    int eightpro = (eight*2);
+    int ninepro = (nine*2);
+    int tenpro = (ten*2);
+    int elevenpro = (eleven*2);
+    int twelvepro = (twelve*2);
+    int thirteenpro = (thirteen*2);
+    int fourteenpro = (fourteen*2);
+    int fifteenpro = (fifteen*2);
+    int sixteenpro = (sixteen*2);
+
+    int sum_last;
+    int sum_secondlast;
+    int sum_three;
+    int sum_four;
+    int sum_five;
+    int sum_six;
+    int sum_seven;
+    int sum_eight;
+    int sum_nine;
+    int sum_ten;
+    int sum_eleven;
+    int sum_twelve;
+    int sum_thirteen;
+    int sum_fourteen;
+    int sum_fifteen;
+    int sum_sixteen;
+
+    if (lastdigitpro >= 10)
+    {
+         sum_last = (lastdigitpro % 100 - lastdigitpro %10)/10 + lastdigitpro % 10;
+
+    }
+    else
+    {
+        sum_last = lastdigitpro;
+    }
+
+    if (secondpro >= 10)
+    {
+         sum_secondlast = (secondpro % 100 - secondpro %10)/10 + secondpro % 10;
+
+    }
+    else
+    {
+        sum_secondlast = secondpro;
+    }
+
+    if (threepro >= 10)
+    {
+         sum_three = (threepro % 100 - threepro %10)/10 + threepro % 10;
+
+    }
+    else
+    {
+        sum_three = threepro;
+    }
+
+    if (fourpro >= 10)
+    {
+         sum_four = (fourpro % 100 - fourpro %10)/10 + fourpro % 10;
+
+    }
+    else
+    {
+        sum_four = fourpro;
+    }
+
+    if (fivepro >= 10)
+    {
+        sum_five = (fivepro % 100 - fivepro %10)/10 + fivepro % 10;
+    }
+    else
+    {
+        sum_five = fivepro;
+    }
+
+    if (sixpro >= 10)
+    {
+         sum_six = (sixpro % 100 - sixpro %10)/10 + sixpro % 10;
+
+    }
+    else
+    {
+        sum_six = sixpro;
+    }
+
+    if (sevenpro >= 10)
+    {
+         sum_seven = (sevenpro % 100 - sevenpro %10)/10 + sevenpro % 10;
+
+    }
+    else
+    {
+        sum_seven = sevenpro;
+    }
+
+    if (eightpro >= 10)
+    {
+        sum_eight = (eightpro % 100 - eightpro %10)/10 + eightpro % 10;
+    }
+
+    else
+    {
+        sum_eight = eightpro;
+    }
+
+    if (ninepro >= 10)
+    {
+        sum_nine = (ninepro % 100 - ninepro %10)/10 + ninepro % 10;
+    }
+    else
+    {
+        sum_nine = ninepro;
+    }
+
+
+    if (tenpro >= 10)
+    {
+        sum_ten = (tenpro % 100 - tenpro %10)/10 + tenpro % 10;
+    }
+    else
+    {
+        sum_ten = tenpro;
+    }
+
+
+    if (elevenpro >= 10)
+    {
+        sum_eleven = (elevenpro % 100 - elevenpro %10)/10 + elevenpro % 10;
+    }
+    else
+    {
+        sum_eleven = elevenpro;
+    }
+
+
+    if (twelvepro >= 10)
+    {
+        sum_twelve = (twelvepro % 100 - twelvepro %10)/10 + twelvepro % 10;
+    }
+    else
+    {
+        sum_twelve = twelvepro;
+    }
+
+
+    if (thirteenpro >= 10)
+    {
+        sum_thirteen = (thirteenpro % 100 - thirteenpro %10)/10 + thirteenpro % 10;
+    }
+
+    else
+    {
+        sum_thirteen = thirteenpro;
+    }
+
+
+    if (fourteenpro >= 10)
+    {
+        sum_fourteen = (fourteenpro % 100 - fourteenpro %10)/10 + fourteenpro % 10;
+    }
+    else
+    {
+        sum_fourteen = fourteenpro;
+    }
+
+    if (fifteenpro >= 10)
+    {
+        sum_fifteen = (fifteenpro % 100 - fifteenpro %10)/10 + fifteenpro % 10;
+    }
+    else
+    {
+        sum_fifteen = fifteenpro;
+    }
+
+    if (sixteenpro >= 10)
+    {
+        sum_sixteen = (sixteenpro % 100 - sixteenpro %10)/10 + sixteenpro % 10;
+    }
+    else
+    {
+        sum_sixteen = sixteenpro;
+    }
+
+    int sum_everyother;
+    int sum_remainingdigits;
+    int sum_total;
+
+
+    sum_everyother = sum_secondlast + sum_four + sum_six + sum_eight + sum_ten + sum_twelve + sum_fourteen + sum_sixteen;
+
+    sum_remainingdigits = lastdigit + three + five + seven + nine + eleven + thirteen + fifteen;
+
+    sum_total = sum_everyother + sum_remainingdigits;
+
+
+
+    if (count == 15 && fifteen == 3 && fourteen == 4 && sum_total % 10 == 0 )
+    {
+        printf("AMEX\n");
+        return 0;
+    }
+
+    else if (count == 15 && fifteen == 3 && fourteen == 7 && sum_total % 10 == 0 )
+    {
+        printf("AMEX\n");
+        return 0;
+    }
+
+    else if (count == 13 && thirteen == 4 && sum_total && 10 == 0)
+    {
+        printf("VISA\n");
+        return 0;
+    }
+
+     else if (count == 16 && sixteen == 4 && sum_total % 10 == 0)
+    {
+        printf("VISA\n");
+        return 0;
+    }
+
+    else if (count == 16 && sixteen == 5 && fifteen == 1 && sum_total % 10 == 0)
+    {
+        printf("MASTERCARD\n");
+        return 0;
+    }
+
+    else if (count == 16 && sixteen == 5 && fifteen == 2 && sum_total % 10 == 0)
+    {
+        printf("MASTERCARD\n");
+        return 0;
+    }
+
+
+    else if (count == 16 && sixteen == 5 && fifteen == 3 && sum_total % 10 == 0)
+    {
+        printf("MASTERCARD\n");
+        return 0;
+    }
+
+    else if (count == 16 && sixteen == 5 && fifteen == 4 && sum_total % 10 == 0)
+    {
+        printf("MASTERCARD\n");
+        return 0;
+    }
+
+    else if (count == 16 && sixteen == 5 && fifteen == 5 && sum_total % 10 == 0)
+    {
+        printf("MASTERCARD\n");
+        return 0;
+    }
+
+    else
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
+
+
+
+
+}
